@@ -1,0 +1,214 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+#checkmenu {
+  display: none;
+}
+
+.jc-spacebetween {
+  justify-content: space-between;
+}
+
+.img-responsive {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 120%;
+  margin: 0;
+}
+p {
+  line-height: 180%;
+}
+.bigTitle {
+  font-size: 3em;
+  letter-spacing: -2px;
+}
+
+@for $i from 1 through 12 {
+  .col#{$i} {
+    width: calc((100% / (12 / $i)) - 3%);
+    margin: 1.5%;
+  }
+}
+
+@media screen and (max-width: 843px) {
+  @for $i from 1 through 12 {
+    .col#{$i}-md {
+      width: calc(100% / (12 / $i))-3%;
+      margin: 1.5%;
+    }
+  }
+  .md-reverse {
+    flex-direction: column-reverse;
+  }
+  .kotak {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  @for $i from 1 through 12 {
+    .col#{$i} {
+      width: 100%;
+      margin: 1.5%;
+    }
+  }
+}
+
+.l-title {
+  font-size: 2em;
+}
+
+.ti-center {
+  text-align: center;
+}
+
+.spacer5 {
+  margin: 5px 0 0;
+}
+.spacer6 {
+  margin: 6px 0 0;
+}
+.spacer10 {
+  margin: 10px 0 0;
+}
+.spacer20 {
+  margin: 20px 0 0;
+}
+.spacer30 {
+  margin: 30px 0 0;
+}
+.spacer40 {
+  margin: 40px 0 0;
+}
+.spacer78 {
+  margin: 78px 0 0;
+}
+.spacer120 {
+  height: 120px;
+}
+.spacer150 {
+  margin: 150px 0 0;
+}
+.c-white {
+  color: white;
+}
+.relative {
+  position: relative;
+}
+.menu {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  right: 0;
+  top: -420%;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 2s;
+  z-index: 2;
+  background: orangered;
+  a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 5px 20px;
+    &:hover {
+      background: black;
+    }
+  }
+}
+#checkmenu:checked ~ .menu {
+  top: 58px;
+  display: flex;
+}
+.icon16 {
+  width: 16px;
+}
+.icon64 {
+  width: 64px;
+}
+.big-hero {
+  background: black;
+  .nav {
+    top: 0;
+    left: 0;
+    padding: 20px 0;
+    background: black;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    .logo {
+      margin: 0 1.5%;
+      h1 {
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+  .hero {
+    .row {
+      .col6 {
+        .btn {
+          a {
+            background: orangered;
+            text-decoration: none;
+            color: white;
+            border: 1px solid orangered;
+            padding: 10px;
+            &:hover {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.432);
+  top: 0;
+  opacity: 0;
+  left: -100%;
+  z-index: 2;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 2s;
+  color: white;
+  padding: 40px;
+  box-sizing: border-box;
+  h2 {
+    color: blanchedalmond;
+  }
+}
+.kotak {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  &:hover .overlay {
+    opacity: 1;
+    top: 0;
+    left: 0;
+  }
+}
